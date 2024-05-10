@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import {Routes, Route, Link, BrowserRouter as Router } from "react-router-dom"
+import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom";
+import axios from "axios";
+import * as jwtdecode from "jwt-decode";
 
 import AddProduct from "./components/AddProduct";
 import Cart from "./components/Cart";
@@ -14,10 +16,45 @@ export default class App extends Component {
     this.state = {
       user: null,
       cart: {},
-      products: []
+      products: [],
     };
     this.routerRef = React.createRef();
   }
+
+  componentDidMount() {
+    let user = localStorage.getItem("user");
+    user = user ? JSON.parse(user) : null;
+    this.setState({ user });
+  }
+
+  login = async (email, password) => {
+    const res = await axios
+      .post("http://localhost:3001/login", { email, password })
+      .catch((res) => {
+        return { status: 401, message: "Unauthorized" };
+      });
+
+    if (res.status === 200) {
+      const { email } = jwtdecode(res.data.accesstoken);
+      const user = {
+        email,
+        token: res.data.accesstoken,
+        accessLevel: email === "admin@example.com" ? 0 : 1,
+      };
+
+      this.setState({ user });
+      localStorage.setItem("user", JSON.stringify(user));
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  logout = (e) => {
+    e.preventDefault();
+    this.setState({ user: null });
+    localStorage.removeItem("user");
+  };
 
   render() {
     return (
@@ -29,7 +66,7 @@ export default class App extends Component {
           login: this.login,
           addProduct: this.addProduct,
           clearCart: this.clearCart,
-          checkout: this.checkout
+          checkout: this.checkout,
         }}
       >
         <Router ref={this.routerRef}>
@@ -47,9 +84,9 @@ export default class App extends Component {
                   aria-label="menu"
                   aria-expanded="false"
                   data-target="navbarBasicExample"
-                  onClick={ e => {
-                    e.preventDefault()
-                    this.setState({showMenu: !this.state.showMenu});
+                  onClick={(e) => {
+                    e.preventDefault();
+                    this.setState({ showMenu: !this.state.showMenu });
                   }}
                 >
                   <span aria-hidden="true"></span>
@@ -57,9 +94,11 @@ export default class App extends Component {
                   <span aria-hidden="true"></span>
                 </label>
               </div>
-              <div className={`navbar-menu${
-                this.state.showMenu ? "is-active" : ""
-              }`}>
+              <div
+                className={`navbar-menu${
+                  this.state.showMenu ? "is-active" : ""
+                }`}
+              >
                 <Link to="/add-product" className="navbar-item">
                   Add Product
                 </Link>
@@ -67,7 +106,7 @@ export default class App extends Component {
                   Cart
                   <span
                     className="tag is primary"
-                    style={{marginLeft: "5px"}}
+                    style={{ marginLeft: "5px" }}
                   >
                     {Object.keys(this.state.cart).length}
                   </span>
@@ -84,11 +123,11 @@ export default class App extends Component {
               </div>
             </nav>
             <Routes>
-              <Route exact path="/"  Component={ProductList}/>
-              <Route exact path="/login"  Component={Login}/>
-              <Route exact path="/cart"  Component={Cart}/>
-              <Route exact path="/add-product"  Component={AddProduct}/>
-              <Route exact path="/products"  Component={ProductList}/>
+              <Route exact path="/" Component={ProductList} />
+              <Route exact path="/login" Component={Login} />
+              <Route exact path="/cart" Component={Cart} />
+              <Route exact path="/add-product" Component={AddProduct} />
+              <Route exact path="/products" Component={ProductList} />
             </Routes>
           </div>
         </Router>
