@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
-import * as jwtdecode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 import AddProduct from "./components/AddProduct";
 import Cart from "./components/Cart";
@@ -21,10 +21,11 @@ export default class App extends Component {
     this.routerRef = React.createRef();
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     let user = localStorage.getItem("user");
+    const products = await axios.get("http://localhost:3001/products");
     user = user ? JSON.parse(user) : null;
-    this.setState({ user });
+    this.setState({ user, products: products.data });
   }
 
   login = async (email, password) => {
@@ -35,7 +36,7 @@ export default class App extends Component {
       });
 
     if (res.status === 200) {
-      const { email } = jwtdecode(res.data.accesstoken);
+      const { email } = jwtDecode(res.data.accessToken);
       const user = {
         email,
         token: res.data.accesstoken,
@@ -80,7 +81,7 @@ export default class App extends Component {
                 <b className="navbar-item is-size-4 ">ecommerce</b>
                 <label
                   role="button"
-                  class="navbar-burger burger"
+                  className="navbar-burger burger"
                   aria-label="menu"
                   aria-expanded="false"
                   data-target="navbarBasicExample"
