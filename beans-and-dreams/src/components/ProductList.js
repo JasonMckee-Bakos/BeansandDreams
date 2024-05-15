@@ -9,7 +9,7 @@ const ProductList = (props) => {
     <>
       <div className="hero is-primary">
         <div className="hero-body container">
-          <h4 className="title">Our Offerings</h4>
+          <h4 className="title">Our Coffee</h4>
         </div>
       </div>
       <br />
@@ -26,7 +26,7 @@ const ProductList = (props) => {
           ) : (
             <div className="column">
               <span className="title has-text-grey-light">
-                No products found
+                Out of Stock
               </span>
             </div>
           )}

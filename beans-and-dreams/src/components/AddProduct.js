@@ -6,7 +6,6 @@ import axios from "axios";
 const initState = {
   name: "",
   price: "",
-  stock: "",
   shortDesc: "",
   description: "",
 };
@@ -19,7 +18,7 @@ class AddProduct extends Component {
 
   save = async (e) => {
     e.preventDefault();
-    const { name, price, stock, shortDesc, description } = this.state;
+    const { name, price, shortDesc, description } = this.state;
 
     if (name && price) {
       const id =
@@ -29,7 +28,6 @@ class AddProduct extends Component {
         id,
         name,
         price,
-        stock,
         shortDesc,
         description,
       });
@@ -40,7 +38,6 @@ class AddProduct extends Component {
           price,
           shortDesc,
           description,
-          stock: stock || 0,
         },
         () => this.setState(initState)
       );
@@ -58,7 +55,7 @@ class AddProduct extends Component {
     this.setState({ [e.target.name]: e.target.value, error: "" });
 
   render() {
-    const { name, price, stock, shortDesc, description } = this.state;
+    const { name, price, shortDesc, description } = this.state;
     const { user } = this.props.context;
 
     return !(user && user.accessLevel < 1) ? (
@@ -95,16 +92,6 @@ class AddProduct extends Component {
                   value={price}
                   onChange={this.handleChange}
                   required
-                />
-              </div>
-              <div className="field">
-                <label className="label">Available in Stock: </label>
-                <input
-                  className="input"
-                  type="number"
-                  name="stock"
-                  value={stock}
-                  onChange={this.handleChange}
                 />
               </div>
               <div className="field">

@@ -13,17 +13,15 @@
   ],
   "products": [
     {
-      "id": "hdmdu0t80yjkfqselfc",
-      "name": "shoes",
-      "stock": 5,
-      "price": 399.99,
-      "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
-      "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
+      "id": "1",
+      "name": "Americano",
+      "price": 2.29,
+      "shortDesc": "a delightful coffee drink that we often recommend for those who enjoy their coffee strong but also a little milder than a straight espresso.",
+      "description": "An Americano's taste is robust and full-flavored, similar to the espresso it's based on, but it's a tad diluted which makes it more palatable if you're not used to the strong taste of espresso."
     },
     {
       "id": "3dc7fiyzlfmkfqseqam",
       "name": "bags",
-      "stock": 20,
       "price": 299.99,
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
@@ -31,34 +29,16 @@
     {
       "id": "aoe8wvdxvrkfqsew67",
       "name": "shirts",
-      "stock": 10,
       "price": 149.99,
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
     },
     {
-      "id": "bmfrurdkswtkfqsf15j",
+      "id": "4",
       "name": "shorts",
-      "stock": 5,
       "price": 109.99,
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
-    },
-    {
-      "id": "hxdopxss0rmlw7vdq47",
-      "name": "Bacon and Egg Tacos",
-      "price": "3.50",
-      "stock": "40",
-      "shortDesc": "tacos with bacon and egg",
-      "description": "Breakfast tacos(bacon & Egg)"
-    },
-    {
-      "id": "2rmlhnc77gwlw7wrj6w",
-      "name": "Bean and Cheese Burrito",
-      "price": "5",
-      "stock": "20",
-      "shortDesc": "A burrito",
-      "description": "Bean and Cheese burrito "
     }
   ]
 }

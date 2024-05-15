@@ -20,11 +20,6 @@ const ProductItem = (props) => {
               <span className="tag is-primary">${product.price}</span>
             </b>
             <div>{product.shortDesc}</div>
-            {product.stock > 0 ? (
-              <small>{product.stock + " Available"}</small>
-            ) : (
-              <small className="has-text-danger"> Out of Stock</small>
-            )}
             <div className="is-clearfix">
               <button
                 className="button is-small is-outlined is-primary is-pulled-right"

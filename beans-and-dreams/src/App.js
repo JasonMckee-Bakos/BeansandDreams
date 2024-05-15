@@ -16,6 +16,7 @@ export default class App extends Component {
     this.state = {
       user: null,
       cart: {},
+      count: 0,
       products: [],
     };
     this.routerRef = React.createRef();
@@ -74,9 +75,9 @@ export default class App extends Component {
     } else {
       cart[cartItem.id] = cartItem;
     }
-    if (cart[cartItem.id].amount > cart[cartItem.id].product.stock) {
-      cart[cartItem.id].amount = cart[cartItem.id].product.stock;
-    }
+    this.state.count += 1
+    console.log(this.state.count);
+
     localStorage.setItem("cart", JSON.stringify(cart));
     this.setState({ cart });
   };
@@ -90,8 +91,9 @@ export default class App extends Component {
 
   clearCart = () => {
     let cart = {};
+    let count = 0
     localStorage.removeItem("cart");
-    this.setState({ cart });
+    this.setState({ cart, count });
   };
 
   checkout = () => {
@@ -104,7 +106,7 @@ export default class App extends Component {
 
     const products = this.state.products.map((p) => {
       if (cart[p.name]) {
-        p.stock = p.stock - cart[p.name].amount;
+        // p.stock = p.stock - cart[p.name].amount;
 
         axios.put(`http://localhost:3001/products/${p.id}`, { ...p });
       }
@@ -159,10 +161,10 @@ export default class App extends Component {
                 }`}
               >
                 <Link to="/products" className="navbar-item">
-                  Products
+                  Drinks and Food
                 </Link>
                 <Link to="/add-product" className="navbar-item">
-                  Add Product
+                  Add Menu Item
                 </Link>
                 <Link to="/cart" className="navbar-item">
                   Cart
@@ -170,15 +172,15 @@ export default class App extends Component {
                     className="tag is primary"
                     style={{ marginLeft: "5px" }}
                   >
-                    {Object.keys(this.state.cart).length}
+                    {this.state.count}
                   </span>
                 </Link>
                 {!this.state.user ? (
-                  <Link to="/login" className="navbar-item">
+                  <Link to="/login" className="navbar-item navbar-end button is-primary">
                     Login
                   </Link>
                 ) : (
-                  <Link to="/" onClick={this.logout} className="Navbar-item">
+                  <Link to="/" onClick={this.logout} className="Navbar-item navbar-end button">
                     Logout
                   </Link>
                 )}
