@@ -13,32 +13,32 @@
   ],
   "products": [
     {
-      "id": "1",
+      "id": "bjyztfkve0plw8evs0h",
+      "name": "Cappuccino",
+      "price": "4.82",
+      "shortDesc": "Cappuccino is an Italian coffee drink that is traditionally prepared with equal parts double espresso, steamed milk, and steamed milk foam on top. It is typically smaller in volume than a latte, and has a thicker layer of micro-foam.",
+      "description": "There are two main ways of preparing cappuccino: one is the traditional or classical way with a cap of milk foam; the other is the \"latte art\" way. The former follows the traditional idea of the cappuccino being prepared by 1⁄3 espresso, 1⁄3 steamed milk and 1⁄3 milk foam. The latter follows the same recipe but is served more often in smaller cups, and the textured milk is gently poured in and finished with a pattern in the surface crèma.  Cappuccino is traditionally served in 150–180 ml cups."
+    },
+    {
+      "id": "532qlmdyqiolw8ex91s",
+      "name": "Espresso",
+      "price": "0.70",
+      "shortDesc": "Espresso is an Italian coffee-brewing method in which a small amount of nearly boiling water is forced by pressure through ground coffee beans.",
+      "description": "Espresso is the most common way of making coffee in southern Europe, especially in Italy, France, Spain and Portugal. Espresso has more caffeine per unit volume than most coffee drinks."
+    },
+    {
+      "id": "s629kb7ipr9lw8ey2kp",
       "name": "Americano",
-      "price": 2.29,
-      "shortDesc": "a delightful coffee drink that we often recommend for those who enjoy their coffee strong but also a little milder than a straight espresso.",
-      "description": "An Americano's taste is robust and full-flavored, similar to the espresso it's based on, but it's a tad diluted which makes it more palatable if you're not used to the strong taste of espresso."
+      "price": "2.29",
+      "shortDesc": "Caffè Americano also known as Americano or American coffee is a coffee drink prepared by diluting an espresso with hot water.",
+      "description": "This drink has a similar strength as esspresso, but different flavor. The strength varies with the number of shots of espresso and amount of water added."
     },
     {
-      "id": "3dc7fiyzlfmkfqseqam",
-      "name": "bags",
-      "price": 299.99,
-      "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
-      "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
-    },
-    {
-      "id": "aoe8wvdxvrkfqsew67",
-      "name": "shirts",
-      "price": 149.99,
-      "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
-      "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
-    },
-    {
-      "id": "4",
-      "name": "shorts",
-      "price": 109.99,
-      "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
-      "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
+      "id": "vyb8z0y0limlw8ezkdc",
+      "name": "Latte",
+      "price": "4.08",
+      "shortDesc": "Caffè latte or just latte is a coffee beverage of Italian origin made with espresso and steamed milk. ",
+      "description": "The term comes from the Italian \"caffè e latte\" which literally means \"coffee and milk\".  In Italy, caffè latte is almost always prepared for breakfast only. Unlike the \"international\" latte drink, generally, the milk in the Italian original is not foamed and sugar is added by the drinker, if at all."
     }
   ]
 }
