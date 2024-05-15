@@ -9,7 +9,7 @@ const ProductList = (props) => {
     <>
       <div className="hero is-primary">
         <div className="hero-body container">
-          <h4 className="title">Our Coffee</h4>
+          <h4 className="title">Our Offerings</h4>
         </div>
       </div>
       <br />

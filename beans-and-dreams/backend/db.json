@@ -15,7 +15,7 @@
     {
       "id": "hdmdu0t80yjkfqselfc",
       "name": "shoes",
-      "stock": 10,
+      "stock": 5,
       "price": 399.99,
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
@@ -31,7 +31,7 @@
     {
       "id": "aoe8wvdxvrkfqsew67",
       "name": "shirts",
-      "stock": 15,
+      "stock": 10,
       "price": 149.99,
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
@@ -43,6 +43,22 @@
       "price": 109.99,
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
+    },
+    {
+      "id": "hxdopxss0rmlw7vdq47",
+      "name": "Bacon and Egg Tacos",
+      "price": "3.50",
+      "stock": "40",
+      "shortDesc": "tacos with bacon and egg",
+      "description": "Breakfast tacos(bacon & Egg)"
+    },
+    {
+      "id": "2rmlhnc77gwlw7wrj6w",
+      "name": "Bean and Cheese Burrito",
+      "price": "5",
+      "stock": "20",
+      "shortDesc": "A burrito",
+      "description": "Bean and Cheese burrito "
     }
   ]
 }
